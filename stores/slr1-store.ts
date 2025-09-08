@@ -1,12 +1,12 @@
 import { create } from 'zustand'
 import { apiClient } from '../lib/api'
-import { SLR1AnalysisResult } from '../types/slr1'
+import { SLR1AnalysisResult, SLR1AnalysisStepInfo } from '../types/slr1'
 
 interface SLR1State {
   inputProductions: string[]
   inputString: string
   result: SLR1AnalysisResult | null
-  inputStringResult: any | null
+  inputStringResult: SLR1AnalysisStepInfo | null
   isLoading: boolean
   error: string | null
 }

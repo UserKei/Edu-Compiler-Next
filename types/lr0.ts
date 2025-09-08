@@ -11,3 +11,14 @@ export interface LR0AnalysisResult {
   isLR0: boolean
   LR0_dot_str: string
 }
+
+// LR0输入串分析结果
+export interface LR0AnalysisStepInfo {
+  info_res: string
+  info_step: number[]
+  info_msg: string[]
+  info_state_stack: string[]
+  info_str: string[]
+  info_symbol_stack: string[]
+  info_action?: string[]
+}

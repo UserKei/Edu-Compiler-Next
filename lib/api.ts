@@ -1,4 +1,4 @@
-import type { ApiResponse, FAResult, LL1AnalysisResult, LR0AnalysisResult, SLR1AnalysisResult } from '../types'
+import type { ApiResponse, FAResult, LL1AnalysisResult, LL1AnalysisStepInfo, LR0AnalysisResult, LR0AnalysisStepInfo, SLR1AnalysisResult, SLR1AnalysisStepInfo } from '../types'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
 
@@ -41,7 +41,7 @@ export class ApiClient {
   }
 
   // LL1分析输入串
-  async getLL1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+  async getLL1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<LL1AnalysisStepInfo>> {
     return this.request('/api/LL1AnalyseInp', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -57,7 +57,7 @@ export class ApiClient {
   }
 
   // LR0分析输入串
-  async getLR0InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+  async getLR0InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<LR0AnalysisStepInfo>> {
     return this.request('/api/LR0AnalyseInp', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -73,7 +73,7 @@ export class ApiClient {
   }
 
   // SLR1分析输入串
-  async getSLR1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+  async getSLR1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<SLR1AnalysisStepInfo>> {
     return this.request('/api/SLR1AnalyseInp', {
       method: 'POST',
       body: JSON.stringify(data),

@@ -9,3 +9,12 @@ export interface LL1AnalysisResult {
   table: Record<string, string>
   isLL1: boolean
 }
+
+// LL1输入串分析结果
+export interface LL1AnalysisStepInfo {
+  info_res: string
+  info_step: number[]
+  info_msg: string[]
+  info_stack: string[]
+  info_str: string[]
+}
