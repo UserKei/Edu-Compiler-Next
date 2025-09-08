@@ -32,27 +32,51 @@ export class ApiClient {
     })
   }
 
-  // LL1算法：语法分析
-  async analyzeLL1(productions: string[]): Promise<ApiResponse<LL1AnalysisResult>> {
+  // LL1语法分析
+  async getLL1Analysis(data: { inpProductions: string[] }): Promise<ApiResponse<LL1AnalysisResult>> {
     return this.request('/api/LL1Analyse', {
       method: 'POST',
-      body: JSON.stringify({ inpProductions: productions }),
+      body: JSON.stringify(data),
     })
   }
 
-  // LR0算法：语法分析
-  async analyzeLR0(productions: string[]): Promise<ApiResponse<LR0AnalysisResult>> {
+  // LL1分析输入串
+  async getLL1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+    return this.request('/api/LL1AnalyseInp', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+  }
+
+  // LR0语法分析
+  async getLR0Analysis(data: { inpProductions: string[] }): Promise<ApiResponse<LR0AnalysisResult>> {
     return this.request('/api/LR0Analyse', {
       method: 'POST',
-      body: JSON.stringify({ inpProductions: productions }),
+      body: JSON.stringify(data),
     })
   }
 
-  // SLR1算法：语法分析
-  async analyzeSLR1(productions: string[]): Promise<ApiResponse<SLR1AnalysisResult>> {
+  // LR0分析输入串
+  async getLR0InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+    return this.request('/api/LR0AnalyseInp', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+  }
+
+  // SLR1语法分析
+  async getSLR1Analysis(data: { inpProductions: string[] }): Promise<ApiResponse<SLR1AnalysisResult>> {
     return this.request('/api/SLR1Analyse', {
       method: 'POST',
-      body: JSON.stringify({ inpProductions: productions }),
+      body: JSON.stringify(data),
+    })
+  }
+
+  // SLR1分析输入串
+  async getSLR1InputStringAnalysis(data: { inpProductions: string[], inpStr: string }): Promise<ApiResponse<any>> {
+    return this.request('/api/SLR1AnalyseInp', {
+      method: 'POST',
+      body: JSON.stringify(data),
     })
   }
 }

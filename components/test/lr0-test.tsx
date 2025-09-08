@@ -6,12 +6,16 @@ import { useLR0Store } from '../../stores/lr0-store'
 export default function LR0Test() {
   const { 
     inputProductions, 
+    inputString,
     result, 
+    inputStringResult,
     isLoading, 
     error, 
     addProduction,
     removeProduction,
-    analyze, 
+    setInputString,
+    analyze,
+    analyzeInputString, 
     reset 
   } = useLR0Store()
 
@@ -75,13 +79,35 @@ export default function LR0Test() {
           )}
         </div>
 
+        {/* 输入串 */}
+        <div>
+          <label className="block text-sm font-medium mb-2">
+            输入串 (可选):
+          </label>
+          <input
+            type="text"
+            value={inputString}
+            onChange={(e) => setInputString(e.target.value)}
+            placeholder="例如: id+id*id"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
         <div className="flex space-x-2">
           <button
             onClick={analyze}
             disabled={isLoading}
             className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isLoading ? '⏳ 分析中...' : '开始分析'}
+            {isLoading ? '⏳ 分析中...' : '语法分析'}
+          </button>
+          
+          <button
+            onClick={analyzeInputString}
+            disabled={isLoading || !inputString.trim()}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? '⏳ 分析中...' : '分析输入串'}
           </button>
           
           <button
@@ -109,9 +135,18 @@ export default function LR0Test() {
 
         {result && (
           <div className="mt-4">
-            <h4 className="font-bold mb-2">分析结果:</h4>
+            <h4 className="font-bold mb-2">语法分析结果:</h4>
             <pre className="bg-gray-100 p-4 rounded overflow-auto text-sm max-h-64">
               {JSON.stringify(result, null, 2)}
+            </pre>
+          </div>
+        )}
+
+        {inputStringResult && (
+          <div className="mt-4">
+            <h4 className="font-bold mb-2">输入串分析结果:</h4>
+            <pre className="bg-blue-50 p-4 rounded overflow-auto text-sm max-h-64">
+              {JSON.stringify(inputStringResult, null, 2)}
             </pre>
           </div>
         )}
