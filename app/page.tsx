@@ -6,13 +6,13 @@ import SLR1Test from '../components/test/slr1-test'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-ctp-base p-4">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-black mb-2">
+          <h1 className="text-3xl font-bold text-ctp-text mb-2">
             🚀 Neko - 数据连接测试平台
           </h1>
-          <p className="text-black">
+          <p className="text-ctp-subtext1">
             Next.js + Zustand + SWR 数据流验证
           </p>
         </header>
@@ -30,7 +30,7 @@ export default function Home() {
           <SLR1Test />
         </div>
 
-        <footer className="mt-8 text-center text-black text-sm">
+        <footer className="mt-8 text-center text-ctp-subtext0 text-sm">
           <p>测试环境 | 验证四个算法模块的数据连接</p>
         </footer>
       </div>
