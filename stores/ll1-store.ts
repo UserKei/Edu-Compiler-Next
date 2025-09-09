@@ -61,6 +61,10 @@ export const useLL1Store = create<LL1Store>((set, get) => ({
       const response = await apiClient.getLL1Analysis({ inpProductions: inputProductions })
       
       if (response.code === 0) {
+        console.group('LL1 语法分析结果')
+        console.log('产生式:', inputProductions)
+        console.log('分析结果:', response.data)
+        console.groupEnd()
         set({ result: response.data })
       } else {
         set({ error: response.message })
@@ -95,6 +99,11 @@ export const useLL1Store = create<LL1Store>((set, get) => ({
       })
       
       if (response.code === 0) {
+        console.group('LL1 输入串分析结果')
+        console.log('产生式:', inputProductions)
+        console.log('输入串:', inputString.trim())
+        console.log('分析结果:', response.data)
+        console.groupEnd()
         set({ inputStringResult: response.data })
       } else {
         set({ error: response.message })

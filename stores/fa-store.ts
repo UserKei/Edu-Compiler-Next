@@ -41,6 +41,10 @@ export const useFAStore = create<FAStore>((set, get) => ({
       const response = await apiClient.getDFAM(inputRegex)
       
       if (response.code === 0) {
+        console.group('FA (有限自动机) 分析结果')
+        console.log('输入正则表达式:', inputRegex)
+        console.log('分析结果:', response.data)
+        console.groupEnd()
         set({ result: response.data })
       } else {
         set({ error: response.message })

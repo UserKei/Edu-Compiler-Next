@@ -61,6 +61,10 @@ export const useLR0Store = create<LR0Store>((set, get) => ({
       const response = await apiClient.getLR0Analysis({ inpProductions: inputProductions })
       
       if (response.code === 0) {
+        console.group('LR0 语法分析结果')
+        console.log('产生式:', inputProductions)
+        console.log('分析结果:', response.data)
+        console.groupEnd()
         set({ result: response.data })
       } else {
         set({ error: response.message })
@@ -95,6 +99,11 @@ export const useLR0Store = create<LR0Store>((set, get) => ({
       })
       
       if (response.code === 0) {
+        console.group('LR0 输入串分析结果')
+        console.log('产生式:', inputProductions)
+        console.log('输入串:', inputString.trim())
+        console.log('分析结果:', response.data)
+        console.groupEnd()
         set({ inputStringResult: response.data })
       } else {
         set({ error: response.message })
