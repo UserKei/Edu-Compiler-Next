@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@catppuccin/tailwindcss": "^1.0.0",
+    "@xyflow/react": "^12.8.4",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
