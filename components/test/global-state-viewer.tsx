@@ -47,23 +47,23 @@ export default function GlobalStateViewer() {
 
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-gray-50">
-      <h3 className="text-lg font-bold mb-4">🔍 全局状态监控</h3>
+      <h3 className="text-lg font-bold mb-4 text-black">🔍 全局状态监控</h3>
       
       <div className="space-y-4">
         {/* Common Store */}
         <div className="bg-white p-3 rounded border">
           <h4 className="font-semibold text-blue-600 mb-2">Common Store</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-sm text-black">
             <span>API连接:</span>
             <span className={
               storeData.common.apiConnected === true ? 'text-green-500' : 
-              storeData.common.apiConnected === false ? 'text-red-500' : 'text-gray-500'
+              storeData.common.apiConnected === false ? 'text-red-500' : 'text-black'
             }>
               {storeData.common.apiConnected === true ? '✅ 已连接' : 
                storeData.common.apiConnected === false ? '❌ 连接失败' : '⚪ 未测试'}
             </span>
             <span>加载状态:</span>
-            <span className={storeData.common.loading ? 'text-yellow-500' : 'text-gray-500'}>
+            <span className={storeData.common.loading ? 'text-yellow-500' : 'text-black'}>
               {storeData.common.loading ? '⏳ 加载中' : '⚪ 空闲'}
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function GlobalStateViewer() {
         {/* FA Store */}
         <div className="bg-white p-3 rounded border">
           <h4 className="font-semibold text-purple-600 mb-2">FA Store</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-sm text-black">
             <span>输入正则:</span>
             <span className="font-mono text-xs">
               {storeData.fa.inputRegex || '空'}
@@ -92,7 +92,7 @@ export default function GlobalStateViewer() {
         {/* LL1 Store */}
         <div className="bg-white p-3 rounded border">
           <h4 className="font-semibold text-green-600 mb-2">LL1 Store</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-sm text-black">
             <span>产生式数量:</span>
             <span>{storeData.ll1.productionsCount}</span>
             <span>状态:</span>
@@ -105,7 +105,7 @@ export default function GlobalStateViewer() {
         {/* LR0 Store */}
         <div className="bg-white p-3 rounded border">
           <h4 className="font-semibold text-orange-600 mb-2">LR0 Store</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-sm text-black">
             <span>产生式数量:</span>
             <span>{storeData.lr0.productionsCount}</span>
             <span>状态:</span>
@@ -118,7 +118,7 @@ export default function GlobalStateViewer() {
         {/* SLR1 Store */}
         <div className="bg-white p-3 rounded border">
           <h4 className="font-semibold text-red-600 mb-2">SLR1 Store</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-sm text-black">
             <span>产生式数量:</span>
             <span>{storeData.slr1.productionsCount}</span>
             <span>状态:</span>
@@ -158,7 +158,7 @@ function getStatusColor(store: { isLoading: boolean; error: string | null; hasRe
   if (store.isLoading) return 'text-yellow-500'
   if (store.error) return 'text-red-500'
   if (store.hasResult) return 'text-green-500'
-  return 'text-gray-500'
+  return 'text-black'
 }
 
 function getStatusText(store: { isLoading: boolean; error: string | null; hasResult: boolean }) {

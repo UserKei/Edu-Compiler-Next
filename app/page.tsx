@@ -10,10 +10,10 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 p-4">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <h1 className="text-3xl font-bold text-black mb-2">
             🚀 Neko - 数据连接测试平台
           </h1>
-          <p className="text-gray-600">
+          <p className="text-black">
             Next.js + Zustand + SWR 数据流验证
           </p>
         </header>
@@ -36,7 +36,7 @@ export default function Home() {
           <SLR1Test />
         </div>
 
-        <footer className="mt-8 text-center text-gray-500 text-sm">
+        <footer className="mt-8 text-center text-black text-sm">
           <p>测试环境 | 验证四个算法模块的数据连接</p>
         </footer>
       </div>

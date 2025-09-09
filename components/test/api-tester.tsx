@@ -7,7 +7,7 @@ export default function ApiTester() {
 
   return (
     <div className="p-4 border rounded-lg shadow-sm">
-      <h3 className="text-lg font-bold mb-4">🔗 API连接测试</h3>
+      <h3 className="text-lg font-bold mb-4 text-black">🔗 API连接测试</h3>
       
       <button
         onClick={testConnection}
@@ -18,10 +18,10 @@ export default function ApiTester() {
       </button>
 
       <div className="mt-4">
-        <p className="flex items-center">
+        <p className="flex items-center text-black">
           <span>连接状态:</span>
           <span className={`ml-2 font-semibold ${
-            apiConnected === null ? 'text-gray-500' :
+            apiConnected === null ? 'text-black' :
             apiConnected ? 'text-green-500' : 'text-red-500'
           }`}>
             {apiConnected === null ? '未测试' : 

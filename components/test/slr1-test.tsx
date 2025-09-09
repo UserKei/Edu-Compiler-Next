@@ -36,12 +36,12 @@ export default function SLR1Test() {
 
   return (
     <div className="p-4 border rounded-lg shadow-sm">
-      <h3 className="text-lg font-bold mb-4">⚡ SLR1 (SLR1语法分析)</h3>
+      <h3 className="text-lg font-bold mb-4 text-black">⚡ SLR1 (SLR1语法分析)</h3>
       
       <div className="space-y-4">
         {/* 产生式输入 */}
         <div>
-          <label className="block text-sm font-medium mb-2">
+          <label className="block text-sm font-medium mb-2 text-black">
             产生式:
           </label>
           <div className="flex space-x-2 mb-2">
@@ -66,7 +66,7 @@ export default function SLR1Test() {
             <div className="border rounded p-2 bg-gray-50 max-h-32 overflow-y-auto">
               {inputProductions.map((production, index) => (
                 <div key={index} className="flex justify-between items-center py-1">
-                  <span className="text-sm font-mono">{production}</span>
+                  <span className="text-sm font-mono text-black">{production}</span>
                   <button
                     onClick={() => removeProduction(index)}
                     className="text-red-500 hover:text-red-700 text-sm"
@@ -81,7 +81,7 @@ export default function SLR1Test() {
 
         {/* 输入串 */}
         <div>
-          <label className="block text-sm font-medium mb-2">
+          <label className="block text-sm font-medium mb-2 text-black">
             输入串 (可选):
           </label>
           <input
@@ -119,12 +119,12 @@ export default function SLR1Test() {
         </div>
 
         {/* 状态显示 */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 text-black">
           <span>状态:</span>
           {isLoading && <span className="text-yellow-500">⏳ 分析中</span>}
           {error && <span className="text-red-500">❌ 错误</span>}
           {result && !isLoading && !error && <span className="text-green-500">✅ 成功</span>}
-          {!isLoading && !error && !result && <span className="text-gray-500">待分析</span>}
+          {!isLoading && !error && !result && <span className="text-black">待分析</span>}
         </div>
 
         {error && (
@@ -135,7 +135,7 @@ export default function SLR1Test() {
 
         {result && (
           <div className="mt-4">
-            <h4 className="font-bold mb-2">语法分析结果:</h4>
+            <h4 className="font-bold mb-2 text-black">语法分析结果:</h4>
             <pre className="bg-gray-100 p-4 rounded overflow-auto text-sm max-h-64">
               {JSON.stringify(result, null, 2)}
             </pre>
@@ -144,7 +144,7 @@ export default function SLR1Test() {
 
         {inputStringResult && (
           <div className="mt-4">
-            <h4 className="font-bold mb-2">输入串分析结果:</h4>
+            <h4 className="font-bold mb-2 text-black">输入串分析结果:</h4>
             <pre className="bg-blue-50 p-4 rounded overflow-auto text-sm max-h-64">
               {JSON.stringify(inputStringResult, null, 2)}
             </pre>

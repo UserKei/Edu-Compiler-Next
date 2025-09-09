@@ -15,11 +15,11 @@ export default function FATest() {
 
   return (
     <div className="p-4 border rounded-lg shadow-sm">
-      <h3 className="text-lg font-bold mb-4">📊 FA (有限自动机)</h3>
+      <h3 className="text-lg font-bold mb-4 text-black">📊 FA (有限自动机)</h3>
       
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-2">
+          <label className="block text-sm font-medium mb-2 text-black">
             正则表达式:
           </label>
           <input
@@ -49,12 +49,12 @@ export default function FATest() {
         </div>
 
         {/* 状态显示 */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 text-black">
           <span>状态:</span>
           {isLoading && <span className="text-yellow-500">⏳ 分析中</span>}
           {error && <span className="text-red-500">❌ 错误</span>}
           {result && !isLoading && !error && <span className="text-green-500">✅ 成功</span>}
-          {!isLoading && !error && !result && <span className="text-gray-500">待分析</span>}
+          {!isLoading && !error && !result && <span className="text-black">待分析</span>}
         </div>
 
         {error && (
@@ -65,7 +65,7 @@ export default function FATest() {
 
         {result && (
           <div className="mt-4">
-            <h4 className="font-bold mb-2">分析结果:</h4>
+            <h4 className="font-bold mb-2 text-black">分析结果:</h4>
             <pre className="bg-gray-100 p-4 rounded overflow-auto text-sm max-h-64">
               {JSON.stringify(result, null, 2)}
             </pre>
