@@ -51,7 +51,7 @@ export default function SLR1Test() {
               onChange={(e) => setNewProduction(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="例如: S->E"
-              className="flex-1 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
             />
             <button
               onClick={handleAddProduction}
@@ -89,7 +89,7 @@ export default function SLR1Test() {
             value={inputString}
             onChange={(e) => setInputString(e.target.value)}
             placeholder="例如: id+id*id"
-            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
         </div>
 
