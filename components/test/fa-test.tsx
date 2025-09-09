@@ -62,15 +62,6 @@ export default function FATest() {
             错误: {error}
           </div>
         )}
-
-        {result && (
-          <div className="mt-4">
-            <h4 className="font-bold mb-2 text-black">分析结果:</h4>
-            <pre className="bg-gray-100 p-4 rounded overflow-auto text-sm max-h-64 text-black">
-              {JSON.stringify(result, null, 2)}
-            </pre>
-          </div>
-        )}
       </div>
     </div>
   )

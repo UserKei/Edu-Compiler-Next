@@ -132,24 +132,6 @@ export default function LL1Test() {
             错误: {error}
           </div>
         )}
-
-        {result && (
-          <div className="mt-4">
-            <h4 className="font-bold mb-2 text-black">语法分析结果:</h4>
-            <pre className="bg-gray-100 p-4 rounded overflow-auto text-sm max-h-64 text-black">
-              {JSON.stringify(result, null, 2)}
-            </pre>
-          </div>
-        )}
-
-        {inputStringResult && (
-          <div className="mt-4">
-            <h4 className="font-bold mb-2 text-black">输入串分析结果:</h4>
-            <pre className="bg-blue-50 p-4 rounded overflow-auto text-sm max-h-64 text-black">
-              {JSON.stringify(inputStringResult, null, 2)}
-            </pre>
-          </div>
-        )}
       </div>
     </div>
   )

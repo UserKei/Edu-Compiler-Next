@@ -3,7 +3,6 @@ import FATest from '../components/test/fa-test'
 import LL1Test from '../components/test/ll1-test'
 import LR0Test from '../components/test/lr0-test'
 import SLR1Test from '../components/test/slr1-test'
-import GlobalStateViewer from '../components/test/global-state-viewer'
 
 export default function Home() {
   return (
@@ -17,11 +16,6 @@ export default function Home() {
             Next.js + Zustand + SWR 数据流验证
           </p>
         </header>
-
-        {/* 全局状态监控 - 置顶 */}
-        <div className="mb-6">
-          <GlobalStateViewer />
-        </div>
 
         {/* API连接测试 */}
         <div className="mb-6">
