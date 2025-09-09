@@ -1,6 +1,6 @@
 import type { ApiResponse, FAResult, LL1AnalysisResult, LL1AnalysisStepInfo, LR0AnalysisResult, LR0AnalysisStepInfo, SLR1AnalysisResult, SLR1AnalysisStepInfo } from '../types'
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+const API_BASE_URL = 'http://127.0.0.1:5000'
 
 export class ApiClient {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<ApiResponse<T>> {
