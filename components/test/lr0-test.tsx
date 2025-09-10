@@ -8,7 +8,7 @@ export default function LR0Test() {
     inputProductions, 
     inputString,
     result, 
-    inputStringResult,
+    // inputStringResult,
     isLoading, 
     error, 
     addProduction,

@@ -8,7 +8,7 @@ export default function LL1Test() {
     inputProductions, 
     inputString,
     result, 
-    inputStringResult,
+    // inputStringResult,
     isLoading, 
     error, 
     addProduction,
