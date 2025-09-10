@@ -46,14 +46,28 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/fa" 
-              className="inline-block bg-ctp-blue text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
+              className="inline-block bg-ctp-blue text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
             >
               🔄 FA画布
             </Link>
             
             <Link 
+              href="/lr0" 
+              className="inline-block bg-ctp-green text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-teal transition-colors"
+            >
+              📊 LR(0)画布
+            </Link>
+            
+            <Link 
+              href="/slr1" 
+              className="inline-block bg-ctp-mauve text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-purple transition-colors"
+            >
+              📊 SLR(1)画布
+            </Link>
+            
+            <Link 
               href="/test" 
-              className="inline-block bg-ctp-green text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-teal transition-colors"
+              className="inline-block bg-ctp-yellow text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-peach transition-colors"
             >
               🧪 测试平台
             </Link>
