@@ -43,37 +43,46 @@ export default function Home() {
         </div>
 
         <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
             <Link 
               href="/fa" 
-              className="inline-block bg-ctp-blue text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
+              className="inline-block bg-ctp-blue text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors text-center"
             >
               🔄 FA画布
             </Link>
             
             <Link 
-              href="/lr0" 
-              className="inline-block bg-ctp-green text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-teal transition-colors"
+              href="/ll1" 
+              className="inline-block bg-ctp-green text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-teal transition-colors text-center"
             >
-              📊 LR(0)画布
+              📊 LL(1)
+            </Link>
+
+            <Link 
+              href="/lr0" 
+              className="inline-block bg-ctp-yellow text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-peach transition-colors text-center"
+            >
+              📈 LR(0)画布
             </Link>
             
             <Link 
               href="/slr1" 
-              className="inline-block bg-ctp-mauve text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-purple transition-colors"
+              className="inline-block bg-ctp-mauve text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-purple transition-colors text-center"
             >
-              📊 SLR(1)画布
+              🎯 SLR(1)画布
             </Link>
-            
+          </div>
+
+          <div className="text-center mt-4">
             <Link 
               href="/test" 
-              className="inline-block bg-ctp-yellow text-ctp-base px-6 py-3 rounded-lg font-medium hover:bg-ctp-peach transition-colors"
+              className="inline-block bg-ctp-surface1 text-ctp-text px-8 py-3 rounded-lg font-medium hover:bg-ctp-surface2 transition-colors"
             >
               🧪 测试平台
             </Link>
           </div>
           
-          <p className="text-ctp-subtext0 text-sm">
+          <p className="text-ctp-subtext0 text-sm text-center">
             体验编译原理算法的交互式演示和可视化绘图
           </p>
         </div>
