@@ -1,38 +1,59 @@
-import APITester from '../components/test/api-tester'
-import FATest from '../components/test/fa-test'
-import LL1Test from '../components/test/ll1-test'
-import LR0Test from '../components/test/lr0-test'
-import SLR1Test from '../components/test/slr1-test'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-ctp-base p-4">
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-ctp-text mb-2">
-            🚀 Neko - 数据连接测试平台
+    <div className="min-h-screen bg-ctp-base flex items-center justify-center p-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <header className="mb-12">
+          <h1 className="text-5xl font-bold text-ctp-text mb-4">
+            🌸 Yuki
           </h1>
-          <p className="text-ctp-subtext1">
-            Next.js + Zustand + SWR 数据流验证
+          <p className="text-xl text-ctp-subtext1 mb-2">
+            编译原理算法演示平台
+          </p>
+          <p className="text-ctp-subtext0">
+            Compiler Theory Algorithm Demonstration Platform
           </p>
         </header>
 
-        {/* API连接测试 */}
-        <div className="mb-6">
-          <APITester />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="bg-ctp-surface0 rounded-lg p-6 border border-ctp-surface1">
+            <h3 className="text-lg font-semibold text-ctp-text mb-3">
+              📚 算法模块
+            </h3>
+            <ul className="text-left text-ctp-subtext1 space-y-2">
+              <li>• LL1 语法分析</li>
+              <li>• LR0 语法分析</li>
+              <li>• SLR1 语法分析</li>
+              <li>• 有穷自动机</li>
+            </ul>
+          </div>
+
+          <div className="bg-ctp-surface0 rounded-lg p-6 border border-ctp-surface1">
+            <h3 className="text-lg font-semibold text-ctp-text mb-3">
+              🛠️ 技术栈
+            </h3>
+            <ul className="text-left text-ctp-subtext1 space-y-2">
+              <li>• Next.js 15</li>
+              <li>• TypeScript</li>
+              <li>• Zustand</li>
+              <li>• SWR</li>
+            </ul>
+          </div>
         </div>
 
-        {/* 算法模块测试 - 网格布局 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <FATest />
-          <LL1Test />
-          <LR0Test />
-          <SLR1Test />
+        <div className="space-y-4">
+          <Link 
+            href="/test" 
+            className="inline-block bg-ctp-blue text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
+          >
+            🧪 进入测试平台
+          </Link>
+          
+          <p className="text-ctp-subtext0 text-sm">
+            开始体验编译原理算法的交互式演示
+          </p>
         </div>
-
-        <footer className="mt-8 text-center text-ctp-subtext0 text-sm">
-          <p>测试环境 | 验证四个算法模块的数据连接</p>
-        </footer>
       </div>
     </div>
   )
