@@ -43,15 +43,24 @@ export default function Home() {
         </div>
 
         <div className="space-y-4">
-          <Link 
-            href="/test" 
-            className="inline-block bg-ctp-blue text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
-          >
-            🧪 进入测试平台
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/fa" 
+              className="inline-block bg-ctp-blue text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-sky transition-colors"
+            >
+              🔄 FA画布
+            </Link>
+            
+            <Link 
+              href="/test" 
+              className="inline-block bg-ctp-green text-ctp-base px-8 py-3 rounded-lg font-medium hover:bg-ctp-teal transition-colors"
+            >
+              🧪 测试平台
+            </Link>
+          </div>
           
           <p className="text-ctp-subtext0 text-sm">
-            开始体验编译原理算法的交互式演示
+            体验编译原理算法的交互式演示和可视化绘图
           </p>
         </div>
       </div>
