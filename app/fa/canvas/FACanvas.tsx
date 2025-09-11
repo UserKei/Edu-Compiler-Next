@@ -49,7 +49,7 @@ const initialEdges: Edge[] = [
 ]
 
 export function FACanvas() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
+  const [nodes, , onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
 
   // 注册自定义节点和边类型
@@ -74,30 +74,6 @@ export function FACanvas() {
     setEdges((eds) => addEdge(connection, eds))
   }, [setEdges])
 
-  // 双击画布添加新节点
-  const onPaneClick = useCallback((event: React.MouseEvent) => {
-    const reactFlowBounds = (event.target as Element).closest('.react-flow')?.getBoundingClientRect()
-    if (!reactFlowBounds) return
-
-    const position = {
-      x: event.clientX - reactFlowBounds.left - 30, // 30 = 节点宽度的一半
-      y: event.clientY - reactFlowBounds.top - 30
-    }
-
-    const newNode: Node = {
-      id: `q${nodes.length}`,
-      type: 'faState',
-      position,
-      data: { 
-        label: `q${nodes.length}`, 
-        isInitial: false, 
-        isFinal: false 
-      }
-    }
-
-    setNodes((nds) => nds.concat(newNode))
-  }, [nodes.length, setNodes])
-
   return (
     <div style={{ width: '100%', height: '600px' }}>
       <ReactFlow
@@ -108,7 +84,6 @@ export function FACanvas() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        onPaneClick={onPaneClick}
         connectionMode={ConnectionMode.Loose}
         fitView
         fitViewOptions={{ padding: 0.2 }}
